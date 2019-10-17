@@ -22,6 +22,8 @@ It is intended to be used by Scala and Java Applications.
 
 ### Installing the SDK
 
+The artifacts are in maven-central repository ([right here](https://search.maven.org/artifact/com.fyber/hashi-tools_2.12)) :
+
 SBT:
 
 ````
@@ -29,6 +31,7 @@ libraryDependencies += "com.fyber" % "hashi-tools_2.12" % "x.x.x"
 ````
 
 Maven:
+
 
 ````
 <dependency>
