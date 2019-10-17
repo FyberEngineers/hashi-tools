@@ -122,36 +122,6 @@ object Secrets {
   }
 
   /**
-    * This creates Secrets client using configuration from Consul from Consul Kv store (rather then typesafe config)
-    * The consul kv structure should be as follows:
-    * |-- vault (vault root folder)
-    * |   |-- client
-    * |   |   |-- clientA
-    * |   |   |   |-- engines (secret engines)
-    * |   |   |   |   |-- engineA (i.e. aws)
-    * |   |   |   |   |   |-- renew (for renewing the token automatically. The value indicates whether to enable auto renew, duration and ttl increment, in seconds.
-    * For example, the vaule: 'true,1800,3600' means, auto renew is active and performed every 1/2 hour, increment the ttl by 1 hour. )
-    * |   |   |   |   |   |-- retries (value indicates number of max retries and the interval among them in millis. i.e '3,1000' means up to 3 tries, with a delay of a second)
-    * |   |   |   |   |   |-- roles (vault role, for example: /creds/ec2-allow)
-    * |   |   |   |   |-- engineB
-    * |   |   |-- clientB
-    * ....
-    *
-    * @param engines - supported secret engines
-    *
-    */
-  /*todo: complete this consul kv configuration support and remove the private modifier */
-  def apply(engines: Set[BasicEngineInfo], client: String, vaultConsulServiceName: String): Secrets = {
-    /*
-      implicit val monitor: VaultMonitorEngine = KamonMonitorEngine
-      val awsEngine = engines.find(a => a.name.equals(AWS.name)).map(info => AWS(client, info.token, vaultConsulServiceName)).getOrElse(AWSNotSupported)
-      val dbEngine = engines.find(a => a.name.equals(Database.name)).map(info => Database(client, info.token, vaultConsulServiceName)).getOrElse(DatabaseNotSupported)
-      Secrets(Engines(awsEngine, dbEngine))
-      */
-    ???
-    }
-
-  /**
     * Use this Secrets constructor directly to get client with a given Engines
     *
     * @param engines - supported secret engines

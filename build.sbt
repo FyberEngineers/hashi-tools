@@ -2,7 +2,7 @@ import sbt.Keys.scalaVersion
 
 name := "hashi-tools"
 
-version := "0.1"
+version := "0.2-beta-1"
 
 scalaVersion := "2.12.8"
 
@@ -29,7 +29,7 @@ lazy val tools = (project in file("."))
     organizationName := "Fyber",
     homepage := Some(url("https://github.com/username/projectname")),
     scmInfo := Some(ScmInfo(browseUrl = url("https://github.com/username/projectname"), connection= "git@github.com:username/projectname.git")),
-    version := "0.1",
+    version := "0.2-beta-1",
     scalaVersion := scalaV,
     scalacOptions ++= Seq(""),
     licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0")),
